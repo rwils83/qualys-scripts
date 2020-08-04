@@ -1,0 +1,114 @@
+default:
+  server: "qualysapi.qg2.apps.qualys.com"
+  port: 443
+  secure: "yes"
+  username:
+  password:
+
+operators:
+    equals:
+        symbol: "="
+        parameters:
+            - integer
+            - text
+            - date
+            - keyword
+            - boolean
+    greater:
+      symbol: ">"
+      name: "GREATER"
+      parameters:
+        - integer
+        - date
+    less:
+      symbol: "<"
+      name: "LESSER"
+      parameters:
+        - integer
+        - date
+
+
+modules:
+  am:
+    name: Asset Management
+    base_url: "/qps/rest/2.0/"
+    content_type: "application/json"
+    application_type: "application/json"
+    resources:
+      tag:
+        name: Tagging
+        url: "/tag"
+        actions:
+          search:
+            method: "GET"
+      asset:
+        name: Assets
+        url: "/asset"
+        actions:
+          get:
+            method: "GET"
+      hostasset:
+        name: Host Assets
+        url: "/hostasset"
+        actions:
+          search:
+            method: "POST"
+            parameters:
+              os:
+                parameter: os
+                desc: text
+              name:
+                parameter: name
+                desc: text
+              tagname:
+                parameter: tagName
+                desc: text
+              created:
+                parameter: created
+                desc: date
+              updated:
+                parameter: updated
+                desc: date
+              id:
+                parameter: id
+                desc: integer
+          count:
+            method: "POST"
+            parameters:
+              os:
+                parameter: os
+                desc: text
+              name:
+                parameter: name
+                desc: text
+              tagname:
+                parameter: tagName
+                desc: text
+              created:
+                parameter: created
+                desc: date
+              updated:
+                parameter: updated
+                desc: date
+              id:
+                parameter: id
+                desc: integer
+
+
+
+      hostinstancevuln:
+        name: Assets
+        url: "/hostinstancevuln"
+        actions:
+          get:
+            method: "GET"
+  portal:
+    name: Portal
+    base_url:  "/qps/rest/portal/version"
+    content_type: "application/json"
+    application_type: "application/json"
+    method: "GET"
+
+
+
+

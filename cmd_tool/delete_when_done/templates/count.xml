@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ServiceRequest>
+    {% if filters %}
+    <filters>
+
+        {% if tag and tag != "all" %}
+        <Criteria field="tagName" operator="EQUALS">{{ tag }}</Criteria>
+        {% endif %}
+        {% if filters.updated %}
+        <Criteria field="updated" operator="{{ filters.updated_operator }}">{{ filters.updated }}</Criteria>
+        {% endif %}
+
+    </filters>
+    {% endif %}
+</ServiceRequest>

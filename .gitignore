@@ -1,0 +1,11 @@
+.idea
+config
+venv
+teststuff
+cookie.txt
+headers
+*.csv
+temp
+curl-examples*
+__pycache__/
+config.yml

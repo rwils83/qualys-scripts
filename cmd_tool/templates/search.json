@@ -1,0 +1,16 @@
+{
+  "ServiceRequest": {
+    "preferences": {
+      "limitResults": 100
+    },
+    "filters": {
+      "Criteria": [
+        {
+          "field": "id",
+          "operator": "GREATER",
+          "value": 0
+        }
+      ]
+    }
+  }
+}

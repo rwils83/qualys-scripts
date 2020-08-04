@@ -1,0 +1,17 @@
+[DEFAULT]
+server = qualysapi.qg2.apps.qualys.com
+port = 443
+secure = yes
+username = None
+password = None
+
+[API]
+search = /qps/rest/2.0/search/am/hostasset/
+deactivate = /qps/rest/2.0/deactivate/am/asset?module=AGENT_VM
+count = /qps/rest/2.0/count/am/hostasset
+
+[MODULES]
+ca = search,deactivate,count
+av = search,count
+vm = search
+was = search

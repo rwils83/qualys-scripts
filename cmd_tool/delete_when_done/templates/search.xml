@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ServiceRequest>
+
+    <preferences>
+        <limitResults>200</limitResults>
+    </preferences>
+
+    {% if filters %}
+    <filters>
+
+        {% if tag and tag != "all" %}
+        <Criteria field="tagName" operator="EQUALS">{{ tag }}</Criteria>
+        {% endif %}
+        {% if lastid > 0 %}
+        <Criteria field="id" operator="GREATER">{{ lastid }}</Criteria>
+        {% endif %}
+        {% if filters.updated %}
+        <Criteria field="updated" operator="{{ filters.updated_operator }}">{{ filters.updated }}</Criteria>
+        {% endif %}
+
+    </filters>
+    {% endif %}
+</ServiceRequest>

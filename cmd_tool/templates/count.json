@@ -1,0 +1,13 @@
+{
+  "ServiceRequest": {
+    "filters": {
+      "Criteria": [
+        {
+          "field": "id",
+          "operator": "GREATER",
+          "value": 0
+        }
+      ]
+    }
+  }
+}
